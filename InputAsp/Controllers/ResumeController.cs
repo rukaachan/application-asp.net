@@ -24,8 +24,8 @@ namespace InputAsp.Controllers
         {
             Applicant applicant = new Applicant();
             applicant.Experiences.Add(new Experience() { ExperienceId = 1 });
-            applicant.Experiences.Add(new Experience() { ExperienceId = 2 });
-            applicant.Experiences.Add(new Experience() { ExperienceId = 3 });
+            //applicant.Experiences.Add(new Experience() { ExperienceId = 2 });
+            //applicant.Experiences.Add(new Experience() { ExperienceId = 3 });
 
             return View(applicant);
         }

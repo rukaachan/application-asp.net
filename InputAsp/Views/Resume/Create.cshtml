@@ -8,37 +8,119 @@
 
 <h4>Applicant</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Gender" class="control-label"></label>
-                <input asp-for="Gender" class="form-control" />
-                <span asp-validation-for="Gender" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Age" class="control-label"></label>
-                <input asp-for="Age" class="form-control" />
-                <span asp-validation-for="Age" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Qualification" class="control-label"></label>
-                <input asp-for="Qualification" class="form-control" />
-                <span asp-validation-for="Qualification" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TotalExperience" class="control-label"></label>
-                <input asp-for="TotalExperience" class="form-control" />
-                <span asp-validation-for="TotalExperience" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+
+@*Penambahan untuk style design*@
+<div class="col-11 mx-auto pt-0">
+    <div class="card">
+        <div class="card-header bg-primary text-uppercase text-white">
+            <h4>Create Applicant</h4>
+        </div>
+        <form enctype="multipart/form-data" asp-action="Create">
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Gender" class="control-label"></label>
+                        <input asp-for="Gender" class="form-control" />
+                        <span asp-validation-for="Gender" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Age" class="control-label"></label>
+                        <input asp-for="Age" class="form-control" />
+                        <span asp-validation-for="Age" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Qualification" class="control-label"></label>
+                        <input asp-for="Qualification" class="form-control" />
+                        <span asp-validation-for="Qualification" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="TotalExperience" class="control-label"></label>
+                        <input asp-for="TotalExperience" class="form-control" />
+                        <span asp-validation-for="TotalExperience" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 btn-group">
+                    <div class="form-group col-8 p-0">
+                        <label asp-for="ProfilePhoto" class="control-label"></label>
+                        <div class="custom-file">
+                            <input asp-for="ProfilePhoto" class="custom-file-input" id="customFile"
+                                   onchange="document.getElementById('PreviwPhoto').src= window.URL.createObjectURL(this.files[0])" />
+                            <label clas="custom-file-label" for="customFile">Choose file</label>
+                        </div>
+                    </div>
+                    <span asp-validation-for="ProfilePhoto" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-4">
+                    <img id="PreviewPhoto" src="~/Images/noimage.png" alt="Logo Image"
+                         width="125" height="125" style="border:1px; margin-top:20px;" />
+                </div>
+
+                <div class="col-md-12">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Company Name
+                                </th>
+                                <th>
+                                    Designation
+                                </th>
+                                <th>
+                                    YearsWorked
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @*@foreach (var item in Model.Experiences)*@
+                            @for (int i = 0; i < Model.Experiences.Count; i++)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.EditorFor(x => x.Experiences[i].CompanyName, new {htmlAttributes = new {@class = "form-control"}})
+                                        @*<input asp-for="@item.CompanyName" class="form-control" />*@
+                                    </td>
+                                    <td>
+                                        @Html.EditorFor(x => x.Experiences[i].Designation, new {htmlAttributes = new {@class = "form-control"}})
+                                        @*<input asp-for="@item.Designation" class="form-control" />*@
+                                    </td>
+                                    <td>
+                                        @Html.EditorFor(x => x.Experiences[i].YearsWorked, new {htmlAttributes = new {@class = "form-control"}})
+                                        @*<input asp-for="@item.YearsWorked" class="form-control" />*@
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-12 btn-group">
+                    <div class="col-6 form-group text-right p-2">
+                        <a asp-action="Index" class="btn btn-secondary">&nbsp;Back&nbsp;</a>
+                    </div>
+                    <div class="col-6 form-group text-left p-2">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </div>
             </div>
         </form>
     </div>
@@ -49,5 +131,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InputAsp.Models
 {
@@ -30,5 +31,14 @@ namespace InputAsp.Models
         [DisplayName("Total Experience In Years")]
         public int TotalExperience { get; set; }
         public virtual List<Experience> Experiences { get; set; } = new List<Experience>(); // detail list Experience akan berada disini
+
+        // menambahkan kerangka database untuk poto
+        public string PhotoUrl { get; set; }
+
+        [Required(ErrorMessage = "Please choose the profile Photo")]
+        [Display(Name = "Profile Photo")]
+        [NotMapped]
+
+        public IFormFile ProfilePhoto { get; set; }
     }
 }

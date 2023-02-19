@@ -36,7 +36,7 @@ namespace InputAsp.Migrations
                     ApplicantId = table.Column<int>(type: "int", nullable: false),
                     CompanyName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Designation = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    YearsWorked = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    YearsWorked = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

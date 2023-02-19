@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -15,6 +15,6 @@ namespace InputAsp.Models
         public string CompanyName { get; set; }
         public string Designation { get; set; }
         [Required]
-        public string YearsWorked { get; set; }
+        public int YearsWorked { get; set; }
     }
 }
