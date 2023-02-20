@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\InputAsp.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\novop\\source\\repos\\InputAsp\\InputAsp\\wwwroot\\Images\\5973cfaa-7888-41ab-a1e4-6a445c3e3deb_kazumaone.jpg",
+      "PackagePath": "staticwebassets\\Images\\5973cfaa-7888-41ab-a1e4-6a445c3e3deb_kazumaone.jpg"
+    },
+    {
+      "Id": "C:\\Users\\novop\\source\\repos\\InputAsp\\InputAsp\\wwwroot\\Images\\noimage.png",
+      "PackagePath": "staticwebassets\\Images\\noimage.png"
+    },
+    {
       "Id": "C:\\Users\\novop\\source\\repos\\InputAsp\\InputAsp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

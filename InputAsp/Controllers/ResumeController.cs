@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using InputAsp.Data;
 using InputAsp.Models;
+using System.Linq;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
 
 namespace InputAsp.Controllers
 {
@@ -8,9 +11,12 @@ namespace InputAsp.Controllers
     {
         private readonly ResumeDbContext _context;
 
-        public ResumeController(ResumeDbContext context)
+        private readonly IWebHostEnvironment _webHost;
+
+        public ResumeController(ResumeDbContext context, IWebHostEnvironment webHost)
         {
             _context = context;
+            _webHost = webHost;
         }
 
         public IActionResult Index()
@@ -33,9 +39,28 @@ namespace InputAsp.Controllers
         [HttpPost]
         public IActionResult Create(Applicant applicant)
         {
+            string uniqueFileName = GetUploadFileName(applicant);
+            applicant.PhotoUrl = uniqueFileName;
             _context.Add(applicant);
             _context.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        private string GetUploadFileName(Applicant applicant)
+        {
+            string uniqueFileName = null;
+
+            if (applicant.ProfilePhoto != null)
+            {
+                string uploadsFolder = Path.Combine(_webHost.WebRootPath, "Images");
+                uniqueFileName = Guid.NewGuid().ToString() + "_" + applicant.ProfilePhoto.FileName;
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    applicant.ProfilePhoto.CopyTo(fileStream);
+                }
+            }
+            return uniqueFileName;
         }
     }
 }

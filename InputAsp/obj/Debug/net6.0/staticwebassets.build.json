@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5udzHoggGaF6+kTAzUxr/9V4IcLw0zCN12UjZ7DGeLc=",
+  "Hash": "2SkJgLPxSE8FpGBOvO5soZYIbf6HN5RZ0ETpmqiT8p8=",
   "Source": "InputAsp",
   "BasePath": "_content/InputAsp",
   "Mode": "Default",
@@ -83,6 +83,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\novop\\source\\repos\\InputAsp\\InputAsp\\wwwroot\\Images\\5973cfaa-7888-41ab-a1e4-6a445c3e3deb_kazumaone.jpg",
+      "SourceId": "InputAsp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\novop\\source\\repos\\InputAsp\\InputAsp\\wwwroot\\",
+      "BasePath": "_content/InputAsp",
+      "RelativePath": "Images/5973cfaa-7888-41ab-a1e4-6a445c3e3deb_kazumaone.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\5973cfaa-7888-41ab-a1e4-6a445c3e3deb_kazumaone.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\novop\\source\\repos\\InputAsp\\InputAsp\\wwwroot\\Images\\noimage.png",
+      "SourceId": "InputAsp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\novop\\source\\repos\\InputAsp\\InputAsp\\wwwroot\\",
+      "BasePath": "_content/InputAsp",
+      "RelativePath": "Images/noimage.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\noimage.png"
     },
     {
       "Identity": "C:\\Users\\novop\\source\\repos\\InputAsp\\InputAsp\\wwwroot\\js\\site.js",
